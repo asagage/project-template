@@ -1,0 +1,31 @@
+---
+
+- name: Install apt packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - software-properties-common
+    - python-apt
+    - python-pycurl
+    - python-pip
+    - libldap2-dev
+    - python-dev
+    - libsasl2-dev
+    - libssl-dev
+
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+
+- name: Install pip packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - pip
+    - jinja2
+    - awscli
+    - boto
+    - boto3
+    - python-ldap

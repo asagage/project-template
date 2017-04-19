@@ -1,0 +1,4 @@
+---
+ - src: quinot.lookup_ldap
+ - src: r_rudi.cowsay
+ - src: geerlingguy.git

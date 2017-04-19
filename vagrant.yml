@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+    - r_rudi.cowsay
+    - bootstrap
+    - quinot.lookup_ldap
+    - geerlingguy.git

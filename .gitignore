@@ -1,0 +1,6 @@
+*-console.log
+.vagrant
+geerlingguy.*
+quinot.*
+r_rudi.*
+*.retry
