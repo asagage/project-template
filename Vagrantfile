@@ -31,9 +31,6 @@ Vagrant.configure(2) do |config|
       :nfs => true,
       :mount_options => ['nolock,vers=3,udp,noatime,actimeo=1']
 
-  # Echo host environment variables into Guest VM
-  config.vm.provision "shell", inline: "echo EMR_USER="+ENV['USER']+" >> /etc/environment"
-
   config.vm.provider "virtualbox" do |vb|
       vb.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000 ]
   end
