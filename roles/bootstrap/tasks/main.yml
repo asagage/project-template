@@ -14,10 +14,7 @@
     - libsasl2-dev
     - libssl-dev
 
-- name: Update all packages to the latest version
-  apt:
-    upgrade: dist
-
+# Pip packaged required for ansible
 - name: Install pip packages
   pip:
     name: "{{ item }}"
@@ -28,4 +25,3 @@
     - awscli
     - boto
     - boto3
-    - python-ldap
