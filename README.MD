@@ -1,4 +1,5 @@
-# Ansible-iam-management
+# project-template
+A template for creating new projects with Ansible and Vagrant on Ubuntu 16
 Table of Contents
 -----------------
 1. [Description](#description)
