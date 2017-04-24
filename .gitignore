@@ -4,3 +4,5 @@ geerlingguy.*
 quinot.*
 r_rudi.*
 *.retry
+packer_cache
+packer-ubuntu-*

@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # Use Ansible Citadel box
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-16.04"
 
   # Forward SSH keys to the Guest VM
   config.ssh.forward_agent = true
@@ -23,10 +23,10 @@ Vagrant.configure(2) do |config|
   #config.vm.provision :hostmanager
   config.vm.define 'template' do |node|
       node.vm.hostname = 'template'
-      node.vm.network :private_network, ip: '192.168.44.51'
+      node.vm.network :private_network, type: "dhcp"
   end
 
-  config.vm.network "forwarded_port", guest: 8157, host: 8157
+  #config.vm.network "forwarded_port", guest: 8157, host: 8157
   config.vm.synced_folder ".", "/vagrant",
       :nfs => true,
       :mount_options => ['nolock,vers=3,udp,noatime,actimeo=1']

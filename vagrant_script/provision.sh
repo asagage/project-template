@@ -42,6 +42,6 @@ cd /vagrant/
 
 echo "  2/2. Ansible (allthethings)..."
 ansible-galaxy install -r roles/requirements.yml -p roles
-ansible-playbook vagrant.yml -i "localhost," --connection=local --extra-vars "PROJECT_APP_PATH=/vagrant"
+ansible-playbook main.yml -i "localhost," --connection=local --extra-vars "PROJECT_APP_PATH=/vagrant"
 
 echo "Ansible Provisioning: Done!"
