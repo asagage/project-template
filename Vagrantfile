@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+project_name = "template"
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -9,21 +11,20 @@ Vagrant.configure(2) do |config|
   # Get rid of that pesky "stdin: is not a tty" error
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-  # Use Ansible Citadel box
-  config.vm.box = "bento/ubuntu-16.04"
-
   # Forward SSH keys to the Guest VM
   config.ssh.forward_agent = true
 
   # Setup hostmanager config to update the host files
-  config.hostmanager.enabled = true
-  config.hostmanager.manage_host = true
-  config.hostmanager.ignore_private_ip = false
-  config.hostmanager.include_offline = true
-  #config.vm.provision :hostmanager
-  config.vm.define 'template' do |node|
-      node.vm.hostname = 'template'
+  # config.hostmanager.enabled = true
+  # config.hostmanager.manage_host = true
+  # config.hostmanager.ignore_private_ip = false
+  # config.hostmanager.include_offline = true
+  # config.vm.provision :hostmanager
+
+  config.vm.define "#{project_name}" do |node|
+      node.vm.hostname = "#{project_name}#{rand(01..99)}"
       node.vm.network :private_network, type: "dhcp"
+      node.vm.box = "bento/ubuntu-16.04"
   end
 
   #config.vm.network "forwarded_port", guest: 8157, host: 8157

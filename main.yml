@@ -1,4 +1,6 @@
 ---
+# localhost can be replaced with any other host or ip address
 - hosts: localhost
   roles:
-    - bootstrap
+    - futurice.pip
+    - geerlingguy.git
