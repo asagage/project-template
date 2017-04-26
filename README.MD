@@ -15,6 +15,11 @@ Vagrant usage
 ------------
 * Install Vagrant hostmanager plugin
 `vagrant plugin install vagrant-hostmanager`
+* Install nfs-common and nfs-server
+Example for Ubuntu
+```
+apt-get install -y nfs-common nfs-kernel-server
+```
 * Open Vagrantfile and change project name
 Example:
 ```ruby

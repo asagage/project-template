@@ -10,22 +10,16 @@ then
   echo "Configuring the Server:"
   export DEBIAN_FRONTEND=noninteractive
 
-  echo "  1/7. Update apt"
-  apt-get update -qq &> /dev/null || exit 1
-
-  echo "  2/7. Install python2 for ubuntu 16"
-  apt-get install python libldap2-dev python-dev libsasl2-dev libssl-dev python-pip
-
-  echo "  3/7. Add Ansible PPA"
+  echo "  1/4. Add Ansible PPA"
   apt-add-repository ppa:ansible/ansible &> /dev/null || exit 1
 
-  echo "  4/7. Update apt to grab new PPA info for Ansible"
+  echo "  2/4. Update apt"
   apt-get update -qq &> /dev/null || exit 1
 
-  echo "  5/7. Install Ansible"
-  apt-get install -qq ansible
+  echo "  3/4. Install python2 and ansible"
+  apt-get -y -qq install python python-dev python-pip ansible || exit 1
 
-  echo "  6/7. Remove auto-installed packages that are no longer required"
+  echo "  4/4. Remove auto-installed packages that are no longer required"
   apt-get -y autoremove &> /dev/null || exit 1
 
 else
