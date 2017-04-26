@@ -15,18 +15,18 @@ Vagrant usage
 ------------
 * Install Vagrant hostmanager plugin
 `vagrant plugin install vagrant-hostmanager`
-* Install nfs-common and nfs-server
-Example for Ubuntu
+* Install nfs-common and nfs-server  
+Example for Ubuntu:
 ```
 apt-get install -y nfs-common nfs-kernel-server
 ```
-* Open Vagrantfile and change project name
+* Open Vagrantfile and change project name  
 Example:
 ```ruby
 project_name = "template"
 ```
-* Additional roles from galaxy should be added in `roles/requirements.yml`
-Example:
+* Additional roles from galaxy should be added in `roles/requirements.yml`  
+Example:  
 ```yaml
 ---
  - src: quinot.lookup_ldap
@@ -35,7 +35,7 @@ Example:
 
 ```
 Vagrant will automatically download this roles from galaxy
-* To run new role role-name should be added in `main.yml`
+* To run new role role-name should be added in `main.yml`  
 Example:
 ```yaml
 ---
@@ -46,7 +46,7 @@ Example:
     - geerlingguy.git
 ```
 * All custom roles should be created in `roles` folder
-* If project required some intalled packages before ansible run, this dependency can be added in shell scrip `vagrant_script/provision.sh`
+* If project required some intalled packages before ansible run, this dependency can be added in shell scrip `vagrant_script/provision.sh`  
 Example:
 ```shell
 apt-get install python libldap2-dev python-dev libsasl2-dev libssl-dev python-pip
