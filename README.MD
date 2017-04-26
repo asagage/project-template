@@ -41,7 +41,6 @@ Example:
 ---
 - hosts: localhost
   roles:
-    - bootstrap
     - r_rudi.cowsay
     - quinot.lookup_ldap
     - geerlingguy.git
