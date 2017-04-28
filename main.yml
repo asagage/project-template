@@ -1,0 +1,6 @@
+---
+# localhost can be replaced with any other host or ip address
+- hosts: localhost
+  # Example how to use roles
+  roles:
+    - geerlingguy.git
